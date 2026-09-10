@@ -2,7 +2,8 @@
   "projects": {
     "default": "x3model-9b29d",
     "dev": "x3model-9b29d",
-    "inmobiliaria-dev": "x3model-9b29d"
+    "inmobiliaria-dev": "x3model-9b29d",
+    "x3model": "x3model-9b29d"
   },
   "targets": {},
   "etags": {}
