@@ -1,0 +1,35 @@
+<form class="filter-panel panel" (ngSubmit)="submit()">
+  <label class="field">
+    <span>Nombre, zona o etiqueta</span>
+    <input class="input" name="query" type="search" [ngModel]="query()" (ngModelChange)="query.set($event)" />
+  </label>
+
+  <label class="field">
+    <span>Ciudad</span>
+    <select class="input" name="city" [ngModel]="city()" (ngModelChange)="city.set($event)">
+      @for (item of cities; track item) {
+        <option [value]="item">{{ item }}</option>
+      }
+    </select>
+  </label>
+
+  <label class="field">
+    <span>Categoria</span>
+    <select class="input" name="category" [ngModel]="category()" (ngModelChange)="setCategory($event)">
+      @for (item of categories; track item) {
+        <option [value]="item">{{ item }}</option>
+      }
+    </select>
+  </label>
+
+  <button class="button primary" type="submit">Filtrar</button>
+</form>
+
+<div class="tier-tools" aria-label="Filtro por nivel">
+  <span>Nivel</span>
+  @for (item of tiers; track item) {
+    <button class="button" type="button" [class.active]="tier() === item" (click)="quickTier(item)">
+      {{ item === 'todos' ? 'Todos' : item }}
+    </button>
+  }
+</div>

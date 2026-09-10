@@ -1,0 +1,25 @@
+<main class="container profile-page">
+  @if (profile(); as item) {
+    <section class="profile-hero panel" [style.--portrait-gradient]="item.coverGradient">
+      <div class="portrait" [attr.data-initial]="item.displayName[0]"></div>
+      <div>
+        <p class="eyebrow">{{ item.tier }} · {{ item.category }}</p>
+        <h1>{{ item.displayName }}</h1>
+        <p class="muted">{{ item.shortBio }}</p>
+        <div class="meta-grid">
+          <div><span>Ciudad</span><strong>{{ item.city }}</strong></div>
+          <div><span>Zona</span><strong>{{ item.zone }}</strong></div>
+          <div><span>Edad declarada</span><strong>{{ item.declaredAge }}+</strong></div>
+          <div><span>Estado</span><strong>{{ item.availability }}</strong></div>
+        </div>
+        <a class="button primary" routerLink="/postular">Solicitar contacto</a>
+      </div>
+    </section>
+  } @else {
+    <section class="not-found panel">
+      <p class="eyebrow">Perfil no encontrado</p>
+      <h1>No encontramos esta publicacion.</h1>
+      <a class="button primary" routerLink="/">Volver al directorio</a>
+    </section>
+  }
+</main>

@@ -1,0 +1,30 @@
+<main class="container legal-document-page">
+  <a class="back-link" routerLink="/legal">Volver a seguridad y legal</a>
+
+  <header class="legal-hero">
+    <p class="eyebrow">Documento legal</p>
+    <h1>{{ document().title }}</h1>
+    <p class="muted">{{ document().summary }}</p>
+    <span>Ultima actualizacion: {{ document().lastUpdated }}</span>
+  </header>
+
+  <section class="document-shell">
+    @for (section of document().sections; track section.heading) {
+      <article class="panel">
+        <h2>{{ section.heading }}</h2>
+        @for (paragraph of section.body; track paragraph) {
+          <p>{{ paragraph }}</p>
+        }
+      </article>
+    }
+  </section>
+
+  <aside class="legal-note panel">
+    <strong>Nota operativa</strong>
+    <p>
+      Este texto es una base para ordenar la plataforma y reducir riesgos. Antes de lanzar con
+      perfiles reales, datos personales, fotos o videos, debe revisarlo un abogado segun la
+      jurisdiccion donde opere 3X.
+    </p>
+  </aside>
+</main>

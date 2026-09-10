@@ -1,0 +1,67 @@
+<main class="container admin-page">
+  <p class="eyebrow">Administracion</p>
+  <h1>Panel editorial</h1>
+  <p class="muted">
+    Vista inicial para moderacion, revision documental, aprobacion de perfiles y control de medios.
+    Luego debe protegerse con Firebase Auth y roles.
+  </p>
+
+  <section class="metric-grid">
+    <div class="panel">
+      <strong>{{ publishedCount() }}</strong>
+      <span>Perfiles publicados</span>
+    </div>
+    <div class="panel">
+      <strong>{{ applications().length }}</strong>
+      <span>Postulaciones demo</span>
+    </div>
+    <div class="panel">
+      <strong>0</strong>
+      <span>Reportes abiertos</span>
+    </div>
+  </section>
+
+  <section class="panel review-table">
+    <h2>Postulaciones recientes</h2>
+    @for (application of applications(); track application.id) {
+      <article>
+        <strong>{{ application.alias }}</strong>
+        <span>{{ application.city }} · {{ application.category }} · {{ application.desiredTier }}</span>
+        <small>{{ application.reviewStatus }}</small>
+      </article>
+    } @empty {
+      <p class="muted">Aun no hay postulaciones en esta sesion.</p>
+    }
+  </section>
+
+  <section class="panel media-lab">
+    <div>
+      <p class="eyebrow">Medios de prueba</p>
+      <h2>Previsualizar fotos y videos cortos</h2>
+      <p class="muted">
+        Estos archivos no se suben a Firebase; solo se muestran en tu navegador para probar proporciones,
+        peso visual y comportamiento de grillas antes de activar Storage.
+      </p>
+    </div>
+
+    <label class="upload-zone">
+      <input type="file" accept="image/*,video/*" multiple (change)="previewMedia($event)" />
+      <span>Seleccionar imagenes o videos</span>
+    </label>
+
+    @if (mediaPreviews.length) {
+      <div class="preview-grid">
+        @for (item of mediaPreviews; track item.url) {
+          <figure>
+            @if (item.type.startsWith('video/')) {
+              <video [src]="item.url" controls muted playsinline></video>
+            } @else {
+              <img [src]="item.url" [alt]="item.name" />
+            }
+            <figcaption>{{ item.name }}</figcaption>
+          </figure>
+        }
+      </div>
+    }
+  </section>
+</main>

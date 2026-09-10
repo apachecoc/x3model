@@ -1,0 +1,118 @@
+<main class="apply-page">
+  <section class="apply-hero">
+    <div class="container apply-hero-grid">
+      <div class="apply-copy">
+        <p class="eyebrow">Anunciar en 3X</p>
+        <h1>Crea un perfil con revisión antes de publicar.</h1>
+        <p class="muted">
+          La persona puede proponer su perfil, fotos y cambios. Administración revisa y aprueba
+          antes de que algo quede visible.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#solicitud">Iniciar solicitud</a>
+          <a class="button" routerLink="/legal">Ver reglas</a>
+        </div>
+      </div>
+
+      <div class="control-panel panel">
+        @for (step of workflow; track step.title) {
+          <article>
+            <strong>{{ step.title }}</strong>
+            <p>{{ step.text }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container tiers-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Niveles de publicacion</p>
+        <h2>Que significa cada categoria</h2>
+      </div>
+      <p class="muted">Esta informacion es para quien quiere publicarse y para que administracion clasifique con criterio.</p>
+    </div>
+
+    <div class="tier-grid">
+      @for (tier of tierDescriptions; track tier.name) {
+        <article class="panel">
+          <h3>{{ tier.name }}</h3>
+          <p>{{ tier.idealFor }}</p>
+          <span>{{ tier.control }}</span>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="container request-section" id="solicitud">
+    <div class="request-copy">
+      <p class="eyebrow">Primer paso</p>
+      <h2>Solicitud inicial</h2>
+      <p class="muted">
+        Despues conectaremos Firebase Auth, Firestore y Storage para que cada persona tenga su panel,
+        suba material y vea el estado de revision.
+      </p>
+    </div>
+
+    <form class="apply-form panel" [formGroup]="form" (ngSubmit)="submit()">
+      <label class="field">
+        <span>Alias publico</span>
+        <input class="input" formControlName="alias" placeholder="Ej: Luna X" />
+      </label>
+
+      <label class="field">
+        <span>Ciudad</span>
+        <select class="input" formControlName="city">
+          <option value="">Selecciona</option>
+          @for (city of cities; track city) {
+            <option [value]="city">{{ city }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Categoria principal</span>
+        <select class="input" formControlName="category">
+          <option value="">Selecciona</option>
+          @for (category of categories; track category) {
+            <option [value]="category">{{ category }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Nivel solicitado</span>
+        <select class="input" formControlName="tier">
+          <option value="">Selecciona</option>
+          @for (tier of tiers; track tier) {
+            <option [value]="tier">{{ tier }}</option>
+          }
+        </select>
+      </label>
+
+      <label class="field full">
+        <span>Contacto de revision</span>
+        <input class="input" formControlName="contact" placeholder="Email, WhatsApp o usuario social" />
+      </label>
+
+      <label class="field full">
+        <span>Presentacion breve</span>
+        <textarea class="input" formControlName="message" placeholder="Cuenta como quieres aparecer en la plataforma"></textarea>
+      </label>
+
+      <label class="check-row full">
+        <input type="checkbox" formControlName="ageConfirmed" />
+        <span>Confirmo que la postulante es mayor de 18 anos.</span>
+      </label>
+
+      <label class="check-row full">
+        <input type="checkbox" formControlName="consentConfirmed" />
+        <span>Confirmo que existe consentimiento para contacto, revision y publicacion.</span>
+      </label>
+
+      <button class="button primary full" type="submit">Enviar solicitud</button>
+      <p class="form-status" role="status">{{ status() }}</p>
+    </form>
+  </section>
+</main>

@@ -1,0 +1,76 @@
+<main>
+  <section class="hero">
+    <img class="hero-image" src="assets/img/hero-3x.png" alt="" />
+    <video class="hero-video" autoplay muted loop playsinline poster="assets/img/hero-3x.png">
+      <source src="assets/video/hero-loop.mp4" type="video/mp4" />
+    </video>
+    <div class="motion-glow" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content container">
+      <p class="eyebrow">Club editorial 18+</p>
+      <h1>Perfiles verificados para una experiencia privada y elegante.</h1>
+      <p class="hero-copy">
+        3X es una vitrina boutique para descubrir talentos adultos con curaduria, medios aprobados
+        y reglas claras de privacidad.
+      </p>
+
+      <x3-filter-panel (filtersChanged)="updateFilters($event)" />
+
+      <div class="experience-tags" aria-label="Filtros rapidos de experiencia">
+        @for (tag of experienceTags; track tag) {
+          <button type="button">{{ tag }}</button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell container featured-editorial">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Ultimos shorts</p>
+        <h2>Movimiento, presencia y curaduria</h2>
+      </div>
+      <a class="button" routerLink="/admin">Probar medios</a>
+    </div>
+
+    <div class="shorts-row">
+      @for (short of shorts; track short.name) {
+        <article class="short-card" [style.--short-gradient]="short.gradient" [attr.data-initial]="short.name[0]">
+          <span>{{ short.tier }}</span>
+          <strong>{{ short.name }}</strong>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section class="section-shell container" id="seleccion">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Seleccion editorial</p>
+        <h2>Perfiles destacados</h2>
+      </div>
+      <a class="button primary" routerLink="/postular">Crear perfil</a>
+    </div>
+
+    <div class="profile-grid">
+      @for (profile of profiles(); track profile.id) {
+        <x3-profile-card [profile]="profile" />
+      } @empty {
+        <p class="muted">No hay perfiles para estos filtros. Prueba otra ciudad o categoria.</p>
+      }
+    </div>
+  </section>
+
+  <section class="section-shell container choose-section">
+    <div>
+      <p class="eyebrow">Busqueda simple</p>
+      <h2>Elige por nivel, ciudad y estilo.</h2>
+      <p class="muted">
+        La portada debe llevar rapido a lo importante: ver perfiles, comparar niveles y abrir una
+        publicacion sin ruido innecesario.
+      </p>
+    </div>
+    <a class="button" routerLink="/legal">Ver criterios de verificacion</a>
+  </section>
+</main>

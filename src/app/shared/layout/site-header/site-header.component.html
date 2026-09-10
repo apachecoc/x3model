@@ -1,0 +1,17 @@
+<header class="site-header">
+  <a class="brand" routerLink="/" aria-label="Ir al inicio">
+    <span class="brand-mark">3X</span>
+    <span class="brand-copy">Club privado</span>
+  </a>
+
+  <nav class="main-nav" aria-label="Navegacion principal">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+    <a routerLink="/" fragment="seleccion">Seleccion</a>
+    <a routerLink="/legal" routerLinkActive="active">Verificacion</a>
+  </nav>
+
+  <div class="header-actions">
+    <a class="button" routerLink="/admin">Ingresar</a>
+    <a class="button primary" routerLink="/postular">Publicar</a>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+@if (visible()) {
+  <section class="age-gate" aria-labelledby="age-gate-title" role="dialog" aria-modal="true">
+    <div class="age-card">
+      <div class="age-logo" aria-hidden="true">3<span>.</span></div>
+
+      <h2 id="age-gate-title">{{ copy().title }}</h2>
+      <p>
+        {{ copy().body }}
+        <a routerLink="/terminos-y-condiciones">Terminos y condiciones</a>,
+        <a routerLink="/politica-de-privacidad">Politica de privacidad</a> y
+        <a routerLink="/politica-de-cookies">Politica de cookies</a>.
+      </p>
+
+      <div class="age-actions">
+        <button class="enter" type="button" (click)="accept()">{{ copy().enter }}</button>
+        <button class="exit" type="button" (click)="exit()">{{ copy().exit }}</button>
+      </div>
+
+      <div class="language-list" aria-label="Seleccionar idioma">
+        @for (item of languages; track item.id) {
+          <button
+            type="button"
+            [class.active]="language() === item.id"
+            (click)="changeLanguage(item.id)"
+          >
+            {{ item.label }}
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+}

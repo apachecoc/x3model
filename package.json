@@ -1,0 +1,40 @@
+{
+  "name": "3x-platform",
+  "version": "0.1.0",
+  "description": "Plataforma Angular para directorio de talentos adultos verificados 3X.",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --host 0.0.0.0 --port 4200",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "deploy:firebase": "npm run build && firebase deploy"
+  },
+  "dependencies": {
+    "@angular/animations": "^22.1.5",
+    "@angular/common": "^22.1.5",
+    "@angular/compiler": "^22.1.5",
+    "@angular/core": "^22.1.5",
+    "@angular/forms": "^22.1.5",
+    "@angular/platform-browser": "^22.1.5",
+    "@angular/router": "^22.1.5",
+    "firebase": "^12.18.0",
+    "rxjs": "~7.8.2",
+    "tslib": "^2.8.1",
+    "zone.js": "~0.16.2"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.1.5",
+    "@angular/cli": "^22.1.5",
+    "@angular/compiler-cli": "^22.1.5",
+    "@types/jasmine": "~5.1.8",
+    "jasmine-core": "~5.12.1",
+    "karma": "~6.4.4",
+    "karma-chrome-launcher": "~3.2.0",
+    "karma-coverage": "~2.2.1",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.1.0",
+    "typescript": "~6.0.3"
+  }
+}

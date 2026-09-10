@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3X | Talentos adultos verificados</title>
+    <meta
+      name="description"
+      content="Directorio premium para talentos adultos verificados, con filtros por ciudad, categoria y disponibilidad."
+    />
+    <link rel="preload" href="assets/img/hero-3x.png" as="image" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <span class="brand-mark">3X</span>
+        <span class="brand-copy">Talentos verificados</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegacion principal">
+        <a href="#perfiles">Perfiles</a>
+        <a href="#zonas">Zonas</a>
+        <a href="#postular">Crear perfil</a>
+        <a href="#seguridad">Verificacion</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="ghost-button" type="button" data-open-panel="login">Ingresar</button>
+        <button class="primary-button small" type="button" data-scroll-to="postular">Publicar</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <img class="hero-image" src="assets/img/hero-3x.png" alt="" />
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">Directorio privado 18+</p>
+          <h1 id="hero-title">3X publica perfiles premium con verificacion, control y presencia propia.</h1>
+          <p class="hero-copy">
+            Una vitrina para modelos y creadoras adultas que quieren ordenar su presencia digital,
+            recibir oportunidades y aparecer en un entorno cuidado.
+          </p>
+
+          <form class="search-panel" id="search-form" aria-label="Buscar perfiles">
+            <label>
+              <span>Nombre o alias</span>
+              <input id="name-filter" type="search" placeholder="Buscar por nombre" autocomplete="off" />
+            </label>
+            <label>
+              <span>Ciudad</span>
+              <select id="city-filter">
+                <option value="todas">Todas</option>
+                <option value="Santiago">Santiago</option>
+                <option value="Vina del Mar">Vina del Mar</option>
+                <option value="Concepcion">Concepcion</option>
+                <option value="Valparaiso">Valparaiso</option>
+              </select>
+            </label>
+            <label>
+              <span>Categoria</span>
+              <select id="category-filter">
+                <option value="todas">Todas</option>
+                <option value="VIP">VIP</option>
+                <option value="Virtual">Virtual</option>
+                <option value="Eventos">Eventos</option>
+                <option value="Masajes">Masajes</option>
+                <option value="Contenido">Contenido</option>
+              </select>
+            </label>
+            <button class="primary-button" type="submit">Filtrar</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="quick-strip" aria-label="Resumen de plataforma">
+        <div>
+          <strong>128</strong>
+          <span>perfiles de ejemplo</span>
+        </div>
+        <div>
+          <strong>4</strong>
+          <span>ciudades iniciales</span>
+        </div>
+        <div>
+          <strong>18+</strong>
+          <span>publicacion verificada</span>
+        </div>
+        <div>
+          <strong>24h</strong>
+          <span>revision editorial</span>
+        </div>
+      </section>
+
+      <section class="section-shell" id="perfiles">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Novedades</p>
+            <h2>Perfiles destacados</h2>
+          </div>
+          <div class="view-tools" aria-label="Orden y filtros rapidos">
+            <button class="tool-button active" type="button" data-tier="todos">Todos</button>
+            <button class="tool-button" type="button" data-tier="Black">Black</button>
+            <button class="tool-button" type="button" data-tier="Diamond">Diamond</button>
+            <button class="tool-button" type="button" data-tier="Gold">Gold</button>
+          </div>
+        </div>
+
+        <div class="category-cloud" id="category-cloud" aria-label="Categorias populares">
+          <button type="button" data-category="VIP">VIP</button>
+          <button type="button" data-category="Virtual">Virtual</button>
+          <button type="button" data-category="Eventos">Eventos</button>
+          <button type="button" data-category="Masajes">Masajes</button>
+          <button type="button" data-category="Contenido">Contenido</button>
+          <button type="button" data-category="todas">Limpiar</button>
+        </div>
+
+        <div class="profile-grid" id="profile-grid" aria-live="polite"></div>
+      </section>
+
+      <section class="feature-band" id="seguridad">
+        <div class="feature-copy">
+          <p class="eyebrow">Base responsable</p>
+          <h2>Publicar mejor tambien significa cuidar a quienes aparecen.</h2>
+          <p>
+            La plataforma queda preparada para consentimiento, revision manual, reporte de perfiles
+            y reglas claras. Antes de operar con contactos reales, conviene revisar normativa local,
+            pagos, privacidad y documentacion de edad con asesoria legal.
+          </p>
+        </div>
+        <div class="trust-list">
+          <div>
+            <strong>Verificacion 18+</strong>
+            <span>Documento, selfie de control y aprobacion manual antes de publicar.</span>
+          </div>
+          <div>
+            <strong>Consentimiento</strong>
+            <span>Cada imagen y texto debe ser aprobado por la persona publicada.</span>
+          </div>
+          <div>
+            <strong>Moderacion</strong>
+            <span>Reporte rapido, bloqueo de contenido y trazabilidad editorial.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-shell two-column" id="zonas">
+        <div>
+          <p class="eyebrow">Cobertura inicial</p>
+          <h2>Zonas y busquedas frecuentes</h2>
+          <p class="muted">
+            Estructura pensada para crecer por ciudad, comuna y categoria, similar a un directorio
+            grande pero con una marca mas limpia.
+          </p>
+        </div>
+        <div class="zone-grid" id="zone-grid"></div>
+      </section>
+
+      <section class="section-shell apply-section" id="postular">
+        <div class="apply-copy">
+          <p class="eyebrow">Crear perfil</p>
+          <h2>Postulacion editorial</h2>
+          <p>
+            Recibe solicitudes con los datos minimos para revisar identidad, disponibilidad,
+            ciudad y tipo de publicacion. Esta version guarda la solicitud solo en pantalla.
+          </p>
+        </div>
+
+        <form class="apply-form" id="apply-form">
+          <label>
+            <span>Alias publico</span>
+            <input name="alias" type="text" placeholder="Ej: Luna X" required />
+          </label>
+          <label>
+            <span>Ciudad</span>
+            <select name="city" required>
+              <option value="">Selecciona</option>
+              <option>Santiago</option>
+              <option>Vina del Mar</option>
+              <option>Concepcion</option>
+              <option>Valparaiso</option>
+            </select>
+          </label>
+          <label>
+            <span>Categoria principal</span>
+            <select name="category" required>
+              <option value="">Selecciona</option>
+              <option>VIP</option>
+              <option>Virtual</option>
+              <option>Eventos</option>
+              <option>Masajes</option>
+              <option>Contenido</option>
+            </select>
+          </label>
+          <label>
+            <span>Contacto de revision</span>
+            <input name="contact" type="text" placeholder="Email o usuario social" required />
+          </label>
+          <label class="full">
+            <span>Presentacion breve</span>
+            <textarea name="bio" rows="4" placeholder="Cuenta como quieres aparecer en la plataforma"></textarea>
+          </label>
+          <label class="check-row full">
+            <input name="adult" type="checkbox" required />
+            <span>Confirmo que la postulante es mayor de 18 anos y acepta ser contactada para verificacion.</span>
+          </label>
+          <button class="primary-button full" type="submit">Enviar postulacion</button>
+          <p class="form-status" id="form-status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <aside class="side-panel" id="profile-panel" aria-hidden="true" aria-labelledby="panel-title">
+      <div class="panel-backdrop" data-close-panel></div>
+      <div class="panel-card" role="dialog" aria-modal="true">
+        <button class="close-button" type="button" data-close-panel aria-label="Cerrar">X</button>
+        <div id="panel-content"></div>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <div>
+        <strong>3X</strong>
+        <span>Directorio privado para talentos adultos verificados.</span>
+      </div>
+      <div class="footer-links">
+        <a href="#seguridad">Seguridad</a>
+        <a href="#postular">Crear perfil</a>
+        <a href="#inicio">Arriba</a>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px 0 46px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+strong {
+  color: var(--text);
+  margin-right: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .site-footer {
+    flex-direction: column;
+  }
+}

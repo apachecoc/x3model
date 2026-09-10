@@ -1,0 +1,22 @@
+<article class="profile-card" [style.--portrait-gradient]="profile().coverGradient" [attr.data-initial]="profile().displayName[0]">
+  <div class="status-row">
+    <span class="status-pill">{{ profile().availability }}</span>
+    <span class="tier-pill">{{ profile().tier }}</span>
+  </div>
+
+  <h3>{{ profile().displayName }}</h3>
+  <p>{{ profile().shortBio }}</p>
+
+  <div class="meta-row">
+    <span>{{ profile().city }}</span>
+    <span>{{ profile().category }} · {{ profile().declaredAge }}+</span>
+  </div>
+
+  <div class="tag-row">
+    @for (tag of profile().tags.slice(0, 3); track tag) {
+      <span>{{ tag }}</span>
+    }
+  </div>
+
+  <a class="button primary" [routerLink]="['/perfil', profile().slug]">Ver perfil</a>
+</article>

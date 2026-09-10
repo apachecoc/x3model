@@ -1,0 +1,40 @@
+.cookie-card {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 80;
+  width: min(520px, calc(100% - 36px));
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(24, 24, 29, 0.96);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+p {
+  margin: 6px 0 8px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--gold);
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.cookie-actions {
+  display: grid;
+  gap: 8px;
+}
+
+@media (max-width: 680px) {
+  .cookie-card {
+    grid-template-columns: 1fr;
+  }
+}

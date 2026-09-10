@@ -1,0 +1,51 @@
+.trust-band {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  padding: 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    radial-gradient(circle at top right, rgba(185, 31, 53, 0.25), transparent 42%),
+    var(--surface);
+}
+
+h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.04;
+}
+
+p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.trust-list {
+  display: grid;
+  gap: 12px;
+}
+
+.trust-list div {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+span {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 880px) {
+  .trust-band {
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
+}

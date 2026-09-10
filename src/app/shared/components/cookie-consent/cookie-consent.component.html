@@ -1,0 +1,16 @@
+@if (visible()) {
+  <aside class="cookie-card" aria-label="Preferencias de cookies">
+    <div>
+      <strong>Cookies y privacidad</strong>
+      <p>
+        Usamos almacenamiento necesario para recordar la confirmacion 18+ y preferencias basicas.
+        Puedes aceptar tambien medicion futura no esencial.
+      </p>
+      <a routerLink="/politica-de-cookies">Leer politica de cookies</a>
+    </div>
+    <div class="cookie-actions">
+      <button class="button" type="button" (click)="accept('essential')">Solo necesarias</button>
+      <button class="button primary" type="button" (click)="accept('all')">Aceptar</button>
+    </div>
+  </aside>
+}
